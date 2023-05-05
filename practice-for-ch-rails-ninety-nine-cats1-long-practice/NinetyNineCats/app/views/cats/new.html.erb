@@ -1,23 +1,31 @@
 <h2>New Cat</h2>
-<form action = "<%= path%>" method = "post">
+<form action = "<%= cats_url %>" method = "POST">
     <div>        
-        <label for = "name">Name: </label>
-        <input id = "name" type = "new" name = "cat[name]" value = "<%= @cat.name%>"/>
+        <label for="name">Name: </label>
+        <input id="name" type = "Create New" name = "cat[name]" value = "<%= @cat.name%>"/>
     </div>
 
     <div>        
-        <label for = "color">Color: </label>
-        <input id = "color" type = "new" color = "cat[color]" value = "<%= @cat.color%>"/>
+        <label for="color">Color: </label>
+        <input id="color" type = "Create New" name = "cat[color]" value = "<%= @cat.color%>"/>
     </div>
 
     <div>        
-        <label for = "birth_date">Birth_date: </label>
-        <input id = "birth_date" type = "new" birth_date = "cat[birth_date]" value = "<%= @cat.birth_date%>"/>
+        <label for= "birth_date">Birth_date: </label>
+        <input id="birth_date" type = "Create New" name = "cat[birth_date]" value = "<%= @cat.birth_date%>"/>
+    </div>
+
+    <div>
+        <label for="sex">Sex: </label>
+        <input id="sex" type = "Create New" name = "cat[sex]" value = "<%= @cat.sex %>"/>
     </div>
 
     <div>        
-        <label for = "description">Description: </label>
-        <input id = "description" type = "new" description = "cat[description]" value = "<%= @cat.description%>"/>
+        <label for="description">Description: </label>
+        <input id="description" type = "Create New" name = "cat[description]" value = "<%= @cat.description%>"/>
     </div>
+    <input type="submit" value="<%= 'Create New' %>" />
 </form>
+
+<%= @error %>
 

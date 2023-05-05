@@ -19,7 +19,8 @@ class CatsController < ApplicationController
     if @cat.update(cat_params)
       render json: @cat
     else 
-      render json: @cat.errors.full_messages, status: 422
+      @error = @cat.errors.full_messages
+      render :new
     end
   end
 
@@ -29,6 +30,8 @@ class CatsController < ApplicationController
   end
 
   def new
+    @cat = Cat.new
+    render :new
   end
 
   def edit
