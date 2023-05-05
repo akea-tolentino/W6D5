@@ -12,11 +12,11 @@
 #  updated_at  :datetime         not null
 #
 class Cat < ApplicationRecord
-    CAT_COLORS = [:orange, :white, :black, :gray, :brown, :domino]
+    CAT_COLORS = ['orange', 'white', 'black', 'gray', 'brown', 'domino']
 
     validates :birth_date, :name, presence: true
     validates :color, inclusion: {in: CAT_COLORS}
-    validates :sex, inclusion: {in: [:M, :F]}
+    validates :sex, inclusion: {in: ['M', 'F']}
     validate :birth_date_cannot_be_future
 
     def birth_date_cannot_be_future
