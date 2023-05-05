@@ -1,0 +1,23 @@
+<h2>New Cat</h2>
+<form action = "<%= path%>" method = "post">
+    <div>        
+        <label for = "name">Name: </label>
+        <input id = "name" type = "new" name = "cat[name]" value = "<%= @cat.name%>"/>
+    </div>
+
+    <div>        
+        <label for = "color">Color: </label>
+        <input id = "color" type = "new" color = "cat[color]" value = "<%= @cat.color%>"/>
+    </div>
+
+    <div>        
+        <label for = "birth_date">Birth_date: </label>
+        <input id = "birth_date" type = "new" birth_date = "cat[birth_date]" value = "<%= @cat.birth_date%>"/>
+    </div>
+
+    <div>        
+        <label for = "description">Description: </label>
+        <input id = "description" type = "new" description = "cat[description]" value = "<%= @cat.description%>"/>
+    </div>
+</form>
+

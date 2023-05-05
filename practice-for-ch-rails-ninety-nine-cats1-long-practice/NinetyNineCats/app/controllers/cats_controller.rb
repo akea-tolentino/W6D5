@@ -2,7 +2,6 @@ class CatsController < ApplicationController
   def index
     @cats = Cat.all
     render :index
-    # render json: @cats
   end
 
   def create
@@ -15,7 +14,6 @@ class CatsController < ApplicationController
   end
 
   def update
-    # @cat = Cat.find_by(params[:id])
     @cat = Cat.find(params[:id])
 
     if @cat.update(cat_params)
@@ -26,9 +24,8 @@ class CatsController < ApplicationController
   end
 
   def show
-    # @cat = Cat.find_by(params[:id])
     @cat = Cat.find(params[:id])
-    render json: @cat
+    render :show
   end
 
   def new
