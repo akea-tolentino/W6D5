@@ -35,6 +35,7 @@ class CatsController < ApplicationController
   end
 
   def edit
+    @cat = Cat.find(params[:id])
   end
 
   private

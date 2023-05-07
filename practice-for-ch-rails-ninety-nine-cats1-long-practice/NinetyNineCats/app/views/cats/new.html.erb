@@ -1,31 +1,66 @@
-<h2>New Cat</h2>
-<form action = "<%= cats_url %>" method = "POST">
-    <div>        
-        <label for="name">Name: </label>
-        <input id="name" type = "Create New" name = "cat[name]" value = "<%= @cat.name%>"/>
-    </div>
-
-    <div>        
-        <label for="color">Color: </label>
-        <input id="color" type = "Create New" name = "cat[color]" value = "<%= @cat.color%>"/>
-    </div>
-
-    <div>        
-        <label for= "birth_date">Birth_date: </label>
-        <input id="birth_date" type = "Create New" name = "cat[birth_date]" value = "<%= @cat.birth_date%>"/>
-    </div>
-
-    <div>
-        <label for="sex">Sex: </label>
-        <input id="sex" type = "Create New" name = "cat[sex]" value = "<%= @cat.sex %>"/>
-    </div>
-
-    <div>        
-        <label for="description">Description: </label>
-        <input id="description" type = "Create New" name = "cat[description]" value = "<%= @cat.description%>"/>
-    </div>
-    <input type="submit" value="<%= 'Create New' %>" />
+<form action = "<%= cats_url %>" method = "post">
+    <ul>
+        <ul>
+            <label for="name">Name: </label><br>
+            <input id="name" type = "Create New" name = "cat[name]" value = "<%= @cat.name%>"/>
+        </ul>
+        <ul>
+            <label for="<%=@cat.sex%>">Sex: </label><br>
+            <input type="radio" id="M" name="cat[sex]" value="M">
+            <label for="<%=@cat.sex%>">Male</label><br>
+            <input type="radio" id="F" name="cat[sex]" value="F">
+            <label for="<%=@cat.sex%>">Female</label><br>
+        </ul>
+        <ul>
+            <label for="<%=@cat.sex%>">Birthdate:</label><br>
+            <input type="date" id="birthday" name="cat[birth_date]">
+        </ul>
+        <ul>
+            <label for="color">Color:</label><br>
+            <select name="cat[color]" id="Colors">
+                <option selected="selected"></option>
+                <%= ['orange', 'white', 'black', 'gray', 'brown', 'domino'].each do |color|%>
+                <option> <%=color%></option>
+                <% end %>
+            </select>
+        </ul>
+        <ul>
+            <label for="<%=@cat.description%>>">Description:</label><br>
+            <input type="textarea" id="description" name="cat[description]"><br>
+        </ul>
+    </ul>
 </form>
 
-<%= @error %>
 
+
+<!-- # <h2>New Cat</h2>
+# <form action = "<%= cats_url %>" method = "POST">
+#     <div>        
+#         <label for="name">Name: </label>
+#         <input id="name" type = "Create New" name = "cat[name]" value = "<%= @cat.name%>"/>
+#     </div>
+
+#     <div>        
+#         <label for="color">Color: </label>
+#         <input id="color" type = "Create New" name = "cat[color]" value = "<%= @cat.color%>"/>
+#     </div>
+
+#     <div>        
+#         <label for= "birth_date">Birth_date: </label>
+#         <input id="birth_date" type = "Create New" name = "cat[birth_date]" value = "<%= @cat.birth_date%>"/>
+#     </div>
+
+#     <div>
+#         <label for="sex">Sex: </label>
+#         <input id="sex" type = "Create New" name = "cat[sex]" value = "<%= @cat.sex %>"/>
+#     </div>
+
+#     <div>        
+#         <label for="description">Description: </label>
+#         <input id="description" type = "Create New" name = "cat[description]" value = "<%= @cat.description%>"/>
+#     </div>
+#     <input type="submit" value="<%= 'Create New' %>" />
+# </form>
+
+# <%= @error %>
+ -->

@@ -1,0 +1,33 @@
+<form action = "<%= cat_url(@cat) %>" method = "post">
+<input type="hidden" name="_method" value="PATCH"/>
+    <ul>
+        <ul>
+            <label for="name">Name: </label><br>
+            <input id="name" type = "Update" name = "cat[name]" value = "<%= @cat.name%>"/>
+        </ul>
+        <ul>
+            <label for="<%=@cat.sex%>">Sex: </label><br>
+            <input type="radio" id="M" name="cat[sex]" value="<%=@cat.sex%>">
+            <label for="<%=@cat.sex%>">Male</label><br>
+            <input type="radio" id="F" name="cat[sex]" value="<%=@cat.sex%>">
+            <label for="<%=@cat.sex%>">Female</label><br>
+        </ul>
+        <ul>
+            <label for="<%=@cat.birth_date%>">Birthdate:</label><br>
+            <input type="date" id="birthday" name="cat[birth_date]" value="<%=@cat.birth_date%>">
+        </ul>
+        <ul>
+            <label for="color">Color:</label><br>
+            <select name="cat[color]" id="Colors">
+                <option selected="selected"><%=@cat.color%></option>
+                <%= ['orange', 'white', 'black', 'gray', 'brown', 'domino'].each do |color|%>
+                <option> <%=color%></option>
+                <% end %>
+            </select>
+        </ul>
+        <ul>
+            <label for="<%=@cat.description%>>">Description:</label><br>
+            <input type="text" id="description" name="cat[description]" value="<%=@cat.description%>"><br>
+        </ul>
+    </ul>
+</form>

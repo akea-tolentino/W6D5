@@ -1,14 +1,24 @@
 <table>
     <thead>
         <tr>
-            <th colspan='4'> Cat Show</th>
+            <th colspan="2">Cat Show</th>
         <tr/>
     </thead>
     <tbody>
-        <tr>    
-            <td> <%= @cat.name%></td>
-            <td> <%= @cat.color%></td>
+        <tr>
+            <td> Name: </td>
+            <td><%= @cat.name%></td>
+        </tr>
+        <tr>
+            <td> Birth Date: </td>
             <td> <%= @cat.birth_date%></td>
+        </tr>
+        <tr>
+            <td> Color: </td>
+            <td><%= @cat.color%></td>
+        </tr>
+        <tr>
+            <td> Description: </td>
             <td> <%= @cat.description%></td>
         </tr>
     </tbody>
